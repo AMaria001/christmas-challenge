@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Noël !</title>
+    <link rel="stylesheet" href="Noël.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> <!-- Police festive -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-fireworks/1.0.0/fireworks.min.js"></script> <!-- Bibliothèque pour feux d'artifice -->
+</head>
+<body>
+    <div class="container">
+        <div class="texte">
+            <h2>MERRY <br> Christmas!</h2>
+        </div>
+        <div class="neige">
+            <div class="snowflake" style="left: 10%"></div>
+            <div class="snowflake" style="left: 20%"></div>
+            <div class="snowflake" style="left: 30%"></div>
+            <div class="snowflake" style="left: 40%"></div>
+            <div class="snowflake" style="left: 50%"></div>
+            <div class="snowflake" style="left: 60%"></div>
+            <div class="snowflake" style="left: 70%"></div>
+            <div class="snowflake" style="left: 80%"></div>
+            <div class="snowflake" style="left: 90%"></div>
+        </div>
+        <div class="audio">
+            <audio controls autoplay loop muted>
+                <source src="./christmas_music.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas l'élément audio.
+            </audio>
+        </div>
+    </div>
+
+    <script>
+        // Initialisation des feux d'artifice
+        const fireworks = new Fireworks(document.getElementById('canvas'), {
+            speed: 4,
+            acceleration: 1.05,
+            friction: 0.98,
+            gravity: 1,
+            particles: 100,
+        });
+        fireworks.start();
+    </script>
+
+    <!-- Canvas pour les feux d'artifice -->
+    <canvas id="canvas" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"></canvas>
+
+</body>
+</html>

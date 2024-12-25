@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #003366; /* Couleur sombre pour le fond */
+    background-image: url('image9.png');
+    background-size: cover;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px; /* Augmenter la taille de la police */
+    font-family: 'Pacifico', cursive; /* Police festive */
+    color: #FFD700; 
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 5px rgba(255,255,255,0.7); /* Effet de texte en relief */
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.8; /* Moins d'opacité pour un effet plus doux */
+    }
+}
+
+.texte {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.snowflake:nth-child(odd) {
+    animation-duration: 12s;
+    animation-delay: -5s;
+}
+
+.snowflake:nth-child(even) {
+    animation-duration: 8s;
+    animation-delay: -3s;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background-color: white; /* Flocons de neige blancs */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: snow 10s linear infinite;
+}
+
+@keyframes snow {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1; /* Opacité initiale */
+    }
+    
+    100% {
+        transform: translateX(100px) translateY(100vh);
+        opacity: 0; /* Flocons disparaissent en tombant */
+    }
+}
+
+.audio {
+   position: absolute; /* Centrer le lecteur audio */
+   bottom: 20px; /* Espacement depuis le bas */
+   left: 50%;
+   transform: translateX(-50%);
+   text-align: center; /* Centrer le texte du contrôle audio */
+   color: #FFD700; /* Couleur dorée pour le texte audio */
+   font-family: 'Arial', sans-serif; /* Police simple pour le texte audio */
+}
